@@ -1,23 +1,61 @@
 aid: basecapanalyticsinc
+
 name: Basecapanalyticsinc
-description: 'Basecapanalyticsinc is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Basecapanalyticsinc is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling. The company appears to have limited publicly available information, with no readily discoverable official website or API documentation. It is listed on EquityZen as a secondary-market offering, but attempts to access the listed URL result in access restrictions. No API endpoints, developer portals, or documentation sites were found during automated probing.'
+
 url: https://raw.githubusercontent.com/api-evangelist/basecapanalyticsinc/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Analytics
+- Data
+- Finance
+- Marketplace
+- Secondary-Market
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/basecapanalyticsinc-hosts.yml
+- type: Vendors
+  url: vendors/basecapanalyticsinc-vendors.yml
+- type: DomainSecurity
+  url: security/basecapanalyticsinc-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/basecapanalyticsinc
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: robots-disallow
+  detail: Access to the EquityZen company page was blocked with HTTP 403, preventing discovery of any API documentation.
+  evidence:
+    - url: https://equityzen.com/company/basecapanalyticsinc
+      status: 403
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 3
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
